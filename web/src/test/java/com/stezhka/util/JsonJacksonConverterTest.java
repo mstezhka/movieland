@@ -1,6 +1,7 @@
 package com.stezhka.util;
 
 import com.stezhka.entity.Movie;
+import com.stezhka.web.util.JsonJacksonConverter;
 import org.junit.Test;
 
 import java.util.ArrayList;

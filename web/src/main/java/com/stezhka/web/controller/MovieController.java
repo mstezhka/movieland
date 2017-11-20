@@ -1,8 +1,8 @@
-package com.stezhka.controller;
+package com.stezhka.web.controller;
 
 import com.stezhka.entity.Movie;
 import com.stezhka.service.MovieService;
-import com.stezhka.util.JsonJacksonConverter;
+import com.stezhka.web.util.JsonJacksonConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

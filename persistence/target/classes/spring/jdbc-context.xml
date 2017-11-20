@@ -9,7 +9,7 @@
 
     <import resource="classpath:/spring/query-context.xml"/>
 
-    <context:component-scan base-package="com.stezhka.dao" />
+    <context:component-scan base-package="com.stezhka.dao.jdbc" />
 
     <context:property-placeholder location="classpath:database.properties" />
 
