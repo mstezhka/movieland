@@ -10,4 +10,6 @@
     <import resource="classpath:spring/service-context.xml"/>
     <context:component-scan base-package="com.stezhka.web.controller" />
 
+    <bean id="modelMapper" class="org.modelmapper.ModelMapper"/>
+
 </beans>

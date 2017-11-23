@@ -19,6 +19,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.26" />
+          <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:0.7.4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.5.RELEASE" />

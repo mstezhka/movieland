@@ -15,9 +15,6 @@ public class MovieDaoImpl implements MovieDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-//
-//    @Autowired
-//    private NamedParameterJdbcTemplate namedJdbcTemplate;
 
     @Autowired
     private String getAllMoviesSQL;

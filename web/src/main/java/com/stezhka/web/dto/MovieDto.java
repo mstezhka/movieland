@@ -1,21 +1,14 @@
-package com.stezhka.entity;
+package com.stezhka.web.dto;
+
+import com.fasterxml.jackson.annotation.JsonView;
+import com.stezhka.entity.Country;
+import com.stezhka.entity.Genre;
 
 import java.util.List;
 
-public class Movie {
-    private int id;
-    private String nameRussian;
-    private String nameNative;
-    private int yearOfRelease;
-    private String description;
-    private double rating;
-    private double price;
-    private String poster;
-    private int votes;
-    private List<Country> countries;
-    private List<Genre> genres;
+public class MovieDto {
 
-    public Movie(int id, String nameRussian, String nameNative, int yearOfRelease, String description, double rating, double price, String poster, int votes) {
+    public MovieDto(int id, String nameRussian, String nameNative, int yearOfRelease, String description, double rating, double price, String poster, int votes, List<Country> countries, List<Genre> genres) {
         this.id = id;
         this.nameRussian = nameRussian;
         this.nameNative = nameNative;
@@ -25,13 +18,45 @@ public class Movie {
         this.price = price;
         this.poster = poster;
         this.votes = votes;
-        this.genres = genres;
         this.countries = countries;
+        this.genres = genres;
     }
 
-    public Movie() {
-
+    public MovieDto() {
     }
+
+    @JsonView(MovieView.Base.class)
+    private int id;
+
+    @JsonView(MovieView.Base.class)
+    private String nameRussian;
+
+    @JsonView(MovieView.Base.class)
+    private String nameNative;
+
+    @JsonView(MovieView.Base.class)
+    private int yearOfRelease;
+
+    @JsonView(MovieView.Base.class)
+    private String description;
+
+    @JsonView(MovieView.Base.class)
+    private double rating;
+
+    @JsonView(MovieView.Base.class)
+    private double price;
+
+    @JsonView(MovieView.Base.class)
+    private String poster;
+
+    @JsonView(MovieView.Base.class)
+    private int votes;
+
+    @JsonView(MovieView.Extended.class)
+    private List<Country> countries;
+
+    @JsonView(MovieView.Extended.class)
+    private List<Genre> genres;
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
@@ -82,4 +107,5 @@ public class Movie {
                 ", genres=" + genres +
                 '}';
     }
+
 }
