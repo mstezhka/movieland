@@ -2,16 +2,18 @@ package com.stezhka.dao.jdbc;
 
 import com.stezhka.dao.MovieDao;
 import com.stezhka.dao.jdbc.mapper.MovieRowMapper;
+import com.stezhka.dao.jdbc.mapper.MovieRandomRowMapper;
 import com.stezhka.entity.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
-@Service
+@Repository
 public class MovieDaoImpl implements MovieDao {
+
+    private static final MovieRowMapper movieRowMapper = new MovieRowMapper();
+    private static final MovieRandomRowMapper movieRandomRowMapper = new MovieRandomRowMapper();
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -23,14 +25,12 @@ public class MovieDaoImpl implements MovieDao {
     private String getRandomMoviesSQL;
 
     public List<Movie> getAllMovies() {
-
-        List<Movie> movies = jdbcTemplate.query(getAllMoviesSQL, new MovieRowMapper());
+        List<Movie> movies = jdbcTemplate.query(getAllMoviesSQL, movieRowMapper);
         return movies;
     }
 
     public List<Movie> getThreeRandomMovies() {
-
-        List<Movie> movies = jdbcTemplate.query(getRandomMoviesSQL, new MovieRowMapper());
+        List<Movie> movies = jdbcTemplate.query(getRandomMoviesSQL, movieRandomRowMapper);
         return movies;
     }
 

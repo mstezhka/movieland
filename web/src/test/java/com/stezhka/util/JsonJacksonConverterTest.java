@@ -2,12 +2,9 @@ package com.stezhka.util;
 
 import com.stezhka.entity.Country;
 import com.stezhka.entity.Genre;
-import com.stezhka.entity.Movie;
-import com.stezhka.web.controller.MovieController;
 import com.stezhka.web.dto.MovieDto;
 import com.stezhka.web.util.JsonJacksonConverter;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;

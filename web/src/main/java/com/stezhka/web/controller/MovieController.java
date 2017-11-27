@@ -6,44 +6,42 @@ import com.stezhka.web.dto.MovieDto;
 import com.stezhka.web.util.JsonJacksonConverter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/movie", produces = "application/json;charset=utf-8")
+@RequestMapping(value = "/movie", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
 public class MovieController {
 
-    @Autowired
-    private MovieService movieService;
+    private final MovieService movieService;
+
+    private final ModelMapper modelMapper;
 
     @Autowired
-    protected ModelMapper modelMapper;
+    public MovieController(MovieService movieService, ModelMapper modelMapper) {
+        this.movieService = movieService;
+        this.modelMapper = modelMapper;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public String getAll() {
         List<Movie> movies = movieService.getAll();
-        List<MovieDto> movieDtos = movies.stream().map(movie -> movieToDto(movie))
+        List<MovieDto> movieDtos = movies.stream().map(this::movieToDto)
                 .collect(Collectors.toList());
         return JsonJacksonConverter.toJson(movieDtos);
     }
 
-    @RequestMapping(value = "/random", method = RequestMethod.GET)
+    @RequestMapping(value = "/random")
     public String getRandom() {
         List<Movie> movies = movieService.getRandom();
-        List<MovieDto> movieDtos = movies.stream().map(movie -> movieToDto(movie))
+        List<MovieDto> movieDtos = movies.stream().map(this::movieToDto)
                 .collect(Collectors.toList());
-        String json = JsonJacksonConverter.toJson(movieDtos);
-        return json;
+        return JsonJacksonConverter.toJson(movieDtos);
     }
 
     private MovieDto movieToDto(Movie movie){
-        MovieDto movieDto = modelMapper.map(movie, MovieDto.class);
-        return movieDto;
+        return modelMapper.map(movie, MovieDto.class);
     }
 }

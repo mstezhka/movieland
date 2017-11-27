@@ -1,6 +1,11 @@
 # Compiled class file
 
 .idea/
+persistence/target/
+web/target/
+service/target/
+model/target/
+
 *.class
 
 # Log file

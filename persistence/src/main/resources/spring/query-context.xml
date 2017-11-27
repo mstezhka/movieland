@@ -16,7 +16,17 @@
          GROUP_CONCAT(DISTINCT mg.genre_id SEPARATOR ',') as genre_ids,
          GROUP_CONCAT(DISTINCT mc.country_id SEPARATOR ',') as country_ids
          FROM movie m, movie_genre mg, movie_country mc
+         WHERE m.id=mg.movie_id and m.id=mc.movie_id
+         group by m.id
          ORDER BY RAND() LIMIT 3;"/>
+    </bean>
+
+    <bean id="getAllCountriesSQL" class="java.lang.String">
+        <constructor-arg value="SELECT id, name FROM country;"/>
+    </bean>
+
+    <bean id="getAllGenresSQL" class="java.lang.String">
+        <constructor-arg value="SELECT id, name FROM genre;"/>
     </bean>
 
 </beans>

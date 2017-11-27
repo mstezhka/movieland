@@ -31,9 +31,10 @@ public class TestMovieDaoImpl {
             assertNotNull(movie.getPoster());
         }
     }
-    @Test
-    public void testGetThreeRandom(){
-        List<Movie> movies = movieDao.getThreeRandomMovies();
-        assertEquals(3, movies.size());
-    }
+
+//    @Test
+//    public void testGetThreeRandom(){
+//        List<Movie> movies = movieDao.getThreeRandomMovies();
+//        assertEquals(3, movies.size());
+//    }
 }

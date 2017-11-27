@@ -15,7 +15,7 @@ public class Movie {
     private List<Country> countries;
     private List<Genre> genres;
 
-    public Movie(int id, String nameRussian, String nameNative, int yearOfRelease, String description, double rating, double price, String poster, int votes) {
+    public Movie(int id, String nameRussian, String nameNative, int yearOfRelease, String description, double rating, double price, String poster, int votes, List<Country> countries, List<Genre> genres) {
         this.id = id;
         this.nameRussian = nameRussian;
         this.nameNative = nameNative;
