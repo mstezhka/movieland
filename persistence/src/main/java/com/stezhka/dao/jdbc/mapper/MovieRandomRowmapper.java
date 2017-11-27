@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieRandomRowMapper implements RowMapper<Movie> {
+public class MovieRandomRowmapper implements RowMapper<Movie> {
 
     @Override
     public Movie mapRow(ResultSet resultSet, int i) throws SQLException, NullPointerException {
@@ -30,7 +30,7 @@ public class MovieRandomRowMapper implements RowMapper<Movie> {
         return movie;
     }
 
-    private List<Country> getMovieCountries(ResultSet resultSet) throws SQLException, NullPointerException {
+    private List<Country> getMovieCountries(ResultSet resultSet) throws SQLException {
         List<Country> countries = new ArrayList<>();
         for (String countryId: resultSet.getString("country_ids").split(",")){
             Country country = new Country();

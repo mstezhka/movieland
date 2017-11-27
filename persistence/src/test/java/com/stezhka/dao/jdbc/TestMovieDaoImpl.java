@@ -32,9 +32,9 @@ public class TestMovieDaoImpl {
         }
     }
 
-//    @Test
-//    public void testGetThreeRandom(){
-//        List<Movie> movies = movieDao.getThreeRandomMovies();
-//        assertEquals(3, movies.size());
-//    }
+    @Test
+    public void testGetThreeRandom(){
+        List<Movie> movies = movieDao.getThreeRandomMovies();
+        assertEquals(3, movies.size());
+    }
 }

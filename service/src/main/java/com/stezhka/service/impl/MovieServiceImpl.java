@@ -19,7 +19,7 @@ public class MovieServiceImpl implements MovieService {
     private CountryService countryService;
 
     @Autowired
-    protected GenreService genreService;
+    private GenreService genreService;
 
     @Override
     public List<Movie> getAll() {

@@ -1,7 +1,7 @@
 package com.stezhka.dao.jdbc;
 
 import com.stezhka.dao.CountryDao;
-import com.stezhka.dao.jdbc.mapper.CountryRowMapper;
+import com.stezhka.dao.jdbc.mapper.CountryRowmapper;
 import com.stezhka.entity.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class CountryDaoImpl implements CountryDao {
 
-    private static final CountryRowMapper countryRowMapper = new CountryRowMapper();
+    private static final CountryRowmapper COUNTRY_ROW_MAPPER = new CountryRowmapper();
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -22,7 +22,7 @@ public class CountryDaoImpl implements CountryDao {
 
     @Override
     public List<Country> getAllCountries(){
-        List<Country> countries = jdbcTemplate.query(getAllCountriesSQL, countryRowMapper);
+        List<Country> countries = jdbcTemplate.query(getAllCountriesSQL, COUNTRY_ROW_MAPPER);
         return countries;
     }
 
