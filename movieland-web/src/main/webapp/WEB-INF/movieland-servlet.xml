@@ -11,8 +11,11 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <import resource="classpath:spring/service-context.xml"/>
     <context:component-scan base-package="com.stezhka.web"/>
 
     <mvc:annotation-driven/>
+
+    <bean id="modelMapper" class="org.modelmapper.ModelMapper"/>
 
 </beans>

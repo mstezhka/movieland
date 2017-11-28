@@ -1,0 +1,4 @@
+127.0.0.1 - - [28/Nov/2017:15:44:04 +0200] "GET /movie/random HTTP/1.1" 200 4009 http-bio-8080-exec-1 1456
+127.0.0.1 - - [28/Nov/2017:15:44:09 +0200] "GET /movie HTTP/1.1" 200 27664 http-bio-8080-exec-3 65
+127.0.0.1 - - [28/Nov/2017:15:44:21 +0200] "GET /movie/random HTTP/1.1" 200 3057 http-bio-8080-exec-5 51
+127.0.0.1 - - [28/Nov/2017:16:35:31 +0200] "GET /movie/random HTTP/1.1" 200 3341 http-bio-8080-exec-1 1420
