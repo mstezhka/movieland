@@ -1,10 +1,10 @@
 # Compiled class file
 
 .idea
-persistence/target/
-web/target/
-service/target/
-model/target/
+persistence/target
+web/target
+service/target
+model/target
 
 movieland.iml
 persistence/persistence.iml
