@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>persistence</artifactId>
+    <artifactId>movieland-persistence</artifactId>
     <modelVersion>4.0.0</modelVersion>
 
     <dependencies>
@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>com.stezhka</groupId>
-            <artifactId>model</artifactId>
+            <artifactId>movieland-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

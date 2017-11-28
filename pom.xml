@@ -8,10 +8,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>persistence</module>
-        <module>service</module>
-        <module>model</module>
-        <module>web</module>
+        <module>movieland-persistence</module>
+        <module>movieland-service</module>
+        <module>movieland-model</module>
+        <module>movieland-web</module>
     </modules>
 
     <properties>
