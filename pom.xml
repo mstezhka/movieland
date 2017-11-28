@@ -20,7 +20,7 @@
     </properties>
 
     <build>
-        <finalName>citystore</finalName>
+        <finalName>movieland</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -29,7 +29,7 @@ public class GenreServiceImpl implements GenreService{
     }
 
     @Override
-    public void FillMovieWithGenres(List<Movie> movies) {
+    public void fillMovieWithGenres(List<Movie> movies) {
 
         logger.info("Start enrichment of movies with genres");
         long startTime = System.currentTimeMillis();

@@ -28,7 +28,7 @@ public class CountryServiceImpl implements CountryService{
     }
 
     @Override
-    public void FillMoviesWithCountries(List<Movie> movies) {
+    public void fillMoviesWithCountries(List<Movie> movies) {
         logger.info("Start enrichment of movies with countries");
         long startTime = System.currentTimeMillis();
 
@@ -38,7 +38,7 @@ public class CountryServiceImpl implements CountryService{
                 movieCountry.setCountryName(countryMap.get(movieCountry.getId()));
             }
 
-        logger.info("End enrichment of movies with countries. It was enriched in {} ms", System.currentTimeMillis() - startTime);
+        logger.info("End enrichment of movies with countries. It was taken in {} ms", System.currentTimeMillis() - startTime);
 
     }
 
