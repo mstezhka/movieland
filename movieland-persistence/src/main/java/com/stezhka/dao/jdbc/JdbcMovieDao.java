@@ -29,23 +29,23 @@ public class JdbcMovieDao implements MovieDao {
 
     public List<Movie> getAllMovies() {
 
-        logger.info("Start getting all movies from DB");
+        logger.debug("Start getting all movies from DB");
         long startTime = System.currentTimeMillis();
 
         List<Movie> movies = jdbcTemplate.query(getAllMoviesSQL, MOVIE_ROW_MAPPER);
 
-        logger.info("End getting all movies from DB. It was taken in {} ms", System.currentTimeMillis() - startTime);
+        logger.debug("End getting all movies from DB. It was taken in {} ms", System.currentTimeMillis() - startTime);
         return movies;
     }
 
     public List<Movie> getThreeRandomMovies() {
 
-        logger.info("Start getting three random movies from DB");
+        logger.debug("Start getting three random movies from DB");
         long startTime = System.currentTimeMillis();
 
         List<Movie> movies = jdbcTemplate.query(getRandomMoviesSQL, MOVIE_RANDOM_ROW_MAPPER);
 
-        logger.info("End getting three random movies from DB. It was taken in {} ms", System.currentTimeMillis() - startTime);
+        logger.debug("End getting three random movies from DB. It was taken in {} ms", System.currentTimeMillis() - startTime);
         return movies;
     }
 

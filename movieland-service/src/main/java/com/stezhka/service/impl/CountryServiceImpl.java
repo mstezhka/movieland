@@ -29,7 +29,7 @@ public class CountryServiceImpl implements CountryService{
 
     @Override
     public void fillMoviesWithCountries(List<Movie> movies) {
-        logger.info("Start enrichment of movies with countries");
+        logger.debug("Start enrichment of movies with countries");
         long startTime = System.currentTimeMillis();
 
         Map<Integer, String> countryMap = countryDao.getAllCountries().stream().collect(Collectors.toMap(Country::getId, Country::getCountryName));
@@ -38,7 +38,7 @@ public class CountryServiceImpl implements CountryService{
                 movieCountry.setCountryName(countryMap.get(movieCountry.getId()));
             }
 
-        logger.info("End enrichment of movies with countries. It was taken in {} ms", System.currentTimeMillis() - startTime);
+        logger.debug("End enrichment of movies with countries. It was taken in {} ms", System.currentTimeMillis() - startTime);
 
     }
 
