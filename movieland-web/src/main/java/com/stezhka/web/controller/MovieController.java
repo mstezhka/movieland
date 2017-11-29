@@ -36,7 +36,7 @@ public class MovieController {
                 .collect(Collectors.toList());
 
         logger.debug("End getting all movies from service. It was taken in {} ms", System.currentTimeMillis() - startTime);
-        return JsonJacksonConverter.movietoJson(movieDtos);
+        return JsonJacksonConverter.movieToJson(movieDtos);
 
     }
 
@@ -50,7 +50,7 @@ public class MovieController {
                 .collect(Collectors.toList());
 
         logger.debug("End getting three random movies from service. It was taken in {} ms", System.currentTimeMillis() - startTime);
-        return JsonJacksonConverter.movietoJson(movieDtos);
+        return JsonJacksonConverter.movieToJson(movieDtos);
 
     }
 

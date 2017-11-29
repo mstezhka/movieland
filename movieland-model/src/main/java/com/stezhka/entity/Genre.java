@@ -14,12 +14,10 @@ public class Genre {
     }
 
     public int getId() {return id;}
-
     public void setId(int id) {this.id = id;}
 
-    public String getGenreName() {return genreName;}
-
-    public void setGenreName(String genreName) {this.genreName = genreName;}
+    public String getName() {return genreName;}
+    public void setName(String genreName) {this.genreName = genreName;}
 
     @Override
     public String toString() {

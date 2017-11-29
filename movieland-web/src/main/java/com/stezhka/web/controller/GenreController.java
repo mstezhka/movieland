@@ -28,7 +28,7 @@ public class GenreController {
         List<Genre> movies = genreService.getAll();
         List<GenreDto> genreDtos = movies.stream().map(this::genreToDto)
                 .collect(Collectors.toList());
-        return JsonJacksonConverter.genretoJson(genreDtos);
+        return JsonJacksonConverter.genreToJson(genreDtos);
     }
 
     private GenreDto genreToDto(Genre genre){

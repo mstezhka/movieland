@@ -13,7 +13,7 @@ public class GenreRowMapper implements RowMapper<Genre> {
         Genre genre = new Genre();
 
         genre.setId(resultSet.getInt("id"));
-        genre.setGenreName(resultSet.getString("name"));
+        genre.setName(resultSet.getString("name"));
 
         return genre;
     }

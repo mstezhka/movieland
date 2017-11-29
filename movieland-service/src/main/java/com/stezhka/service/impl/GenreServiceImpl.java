@@ -33,10 +33,10 @@ public class GenreServiceImpl implements GenreService{
         logger.debug("Start enrichment of movies with genres");
         long startTime = System.currentTimeMillis();
 
-        Map<Integer, String> genreMap = genreDao.getAllGenres().stream().collect(Collectors.toMap(Genre::getId, Genre::getGenreName));
+        Map<Integer, String> genreMap = genreDao.getAllGenres().stream().collect(Collectors.toMap(Genre::getId, Genre::getName));
         for (Movie movie: movies)
             for (Genre movieGenre : movie.getGenres()) {
-            movieGenre.setGenreName(genreMap.get(movieGenre.getId()));
+            movieGenre.setName(genreMap.get(movieGenre.getId()));
             }
 
         logger.debug("End enrichment of movies with genres. It was enriched in {} ms", System.currentTimeMillis() - startTime);
