@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="movieland-web:war">
-    <output-path>$PROJECT_DIR$/movieland-web/target</output-path>
-    <root id="archive" name="movieland.war">
-      <element id="artifact" artifact-name="movieland-web:war exploded" />
-    </root>
-  </artifact>
-</component>
