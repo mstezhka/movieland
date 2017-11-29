@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @RestController
 public class MovieController {
 
-    private final String produce = "application/json;charset=utf-8";
     private final MovieService movieService;
     private final ModelMapper modelMapper;
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -27,7 +26,7 @@ public class MovieController {
         this.modelMapper = modelMapper;
     }
 
-    @RequestMapping(value = "/movie", method = RequestMethod.GET, produces = produce)
+    @RequestMapping(value = "/movie", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public String getAll() {
         logger.debug("Start getting all movies from service");
         long startTime = System.currentTimeMillis();
@@ -41,7 +40,7 @@ public class MovieController {
         return JsonJacksonConverter.toJson(movieDtos);
     }
 
-    @RequestMapping(value = "/movie/random", method = RequestMethod.GET, produces = produce)
+    @RequestMapping(value = "/movie/random", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public String getRandom() {
         logger.debug("Start getting three random movies from service");
         long startTime = System.currentTimeMillis();
