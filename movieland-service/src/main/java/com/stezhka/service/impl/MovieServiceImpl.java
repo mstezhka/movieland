@@ -29,8 +29,8 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<Movie> getRandom() {
         List<Movie> movies = movieDao.getThreeRandomMovies();
-        countryService.FillMoviesWithCountries(movies);
-        genreService.FillMovieWithGenres(movies);
+        countryService.fillMoviesWithCountries(movies);
+        genreService.fillMovieWithGenres(movies);
         return movies;
     }
 }

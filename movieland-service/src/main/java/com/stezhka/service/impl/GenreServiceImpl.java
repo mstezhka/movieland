@@ -27,7 +27,7 @@ public class GenreServiceImpl implements GenreService{
     }
 
     @Override
-    public void FillMovieWithGenres(List<Movie> movies) {
+    public void fillMovieWithGenres(List<Movie> movies) {
         Map<Integer, String> genreMap = genreDao.getAllGenres().stream().collect(Collectors.toMap(Genre::getId, Genre::getGenreName));
         for (Movie movie: movies)
             for (Genre movieGenre : movie.getGenres()) {

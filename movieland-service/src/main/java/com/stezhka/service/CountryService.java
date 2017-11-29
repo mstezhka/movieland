@@ -9,6 +9,6 @@ public interface CountryService {
 
     List<Country> getAll();
 
-    void FillMoviesWithCountries(List<Movie> movies);
+    void fillMoviesWithCountries(List<Movie> movies);
 
 }

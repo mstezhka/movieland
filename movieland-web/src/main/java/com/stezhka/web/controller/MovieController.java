@@ -29,7 +29,7 @@ public class MovieController {
         List<Movie> movies = movieService.getAll();
         List<MovieDto> movieDtos = movies.stream().map(this::movieToDto)
                 .collect(Collectors.toList());
-        return JsonJacksonConverter.toJson(movieDtos);
+        return JsonJacksonConverter.movietoJson(movieDtos);
     }
 
     @RequestMapping(value = "/movie/random", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
@@ -37,7 +37,7 @@ public class MovieController {
         List<Movie> movies = movieService.getRandom();
         List<MovieDto> movieDtos = movies.stream().map(this::movieToDto)
                 .collect(Collectors.toList());
-        return JsonJacksonConverter.toJson(movieDtos);
+        return JsonJacksonConverter.movietoJson(movieDtos);
     }
 
     private MovieDto movieToDto(Movie movie){

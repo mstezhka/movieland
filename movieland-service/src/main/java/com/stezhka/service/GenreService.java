@@ -9,6 +9,6 @@ public interface GenreService {
 
     List<Genre> getAll();
 
-    void FillMovieWithGenres(List<Movie> movies);
+    void fillMovieWithGenres(List<Movie> movies);
 
 }

@@ -22,7 +22,7 @@ public class JsonJacksonConverterTest {
         MovieDto movieDto1 = new MovieDto(1, "ТестФильм1", "TestMovie1", 1984, "description1", 9.5, 100.5, "http://posterfilm1.com", 100, countries, genres);
         List<MovieDto> movies = new ArrayList<>();
         movies.add(movieDto1);
-        String jsonConverted = JsonJacksonConverter.toJson(movies);
+        String jsonConverted = JsonJacksonConverter.movietoJson(movies);
 
         assertEquals(json, jsonConverted);
     }

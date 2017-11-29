@@ -25,7 +25,7 @@ public class CountryServiceImpl implements CountryService{
     }
 
     @Override
-    public void FillMoviesWithCountries(List<Movie> movies) {
+    public void fillMoviesWithCountries(List<Movie> movies) {
         Map<Integer, String> countryMap = countryDao.getAllCountries().stream().collect(Collectors.toMap(Country::getId, Country::getCountryName));
         for (Movie movie: movies)
             for (Country movieCountry : movie.getCountries()) {
