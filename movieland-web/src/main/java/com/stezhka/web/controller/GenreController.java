@@ -16,7 +16,6 @@ public class GenreController {
 
     private final GenreService genreService;
     private final ModelMapper modelMapper;
-    private final String produce = "application/json;charset=utf-8";
 
     @Autowired
     public GenreController(GenreService genreService, ModelMapper modelMapper) {
@@ -24,7 +23,7 @@ public class GenreController {
         this.modelMapper = modelMapper;
     }
 
-    @RequestMapping(value = "/genre", method = RequestMethod.GET, produces = produce)
+    @RequestMapping(value = "/genre", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public String getAll() {
         List<Genre> movies = genreService.getAll();
         List<GenreDto> genreDtos = movies.stream().map(this::genreToDto)
