@@ -30,11 +30,7 @@
     </bean>
 
     <bean id="getMoviesByGenreSQL" class="java.lang.String">
-        <constructor-arg value="SELECT
-        m.id, m.name_russian, m.name_native, m.year_of_release, m.description,
-        m.rating, m.price, m.picture_path, m.votes,
-        FROM movie m, movie_genre mg
-        WHERE m.id=mg.movie_id and mg.genre_id=?;"/>
+        <constructor-arg value="SELECT m.id, m.name_russian, m.name_native, m.year_of_release, m.description, m.rating, m.price, m.picture_path, m.votes FROM movie m, movie_genre mg WHERE m.id=mg.movie_id and mg.genre_id=? ;"/>
     </bean>
 
 </beans>

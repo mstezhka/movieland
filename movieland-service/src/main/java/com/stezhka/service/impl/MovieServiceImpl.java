@@ -33,4 +33,9 @@ public class MovieServiceImpl implements MovieService {
         genreService.fillMovieWithGenres(movies);
         return movies;
     }
+
+    @Override
+    public List<Movie> getMoviesByGenreId(int genreId) {
+        return movieDao.getMoviesByGenreId(genreId);
+    }
 }

@@ -27,8 +27,10 @@ public class JdbcMovieDao implements MovieDao {
     @Autowired
     private String getRandomMoviesSQL;
 
-    public List<Movie> getAllMovies() {
+    @Autowired
+    private String getMoviesByGenreSQL;
 
+    public List<Movie> getAllMovies() {
         logger.debug("Start getting all movies from DB");
         long startTime = System.currentTimeMillis();
 
@@ -39,7 +41,6 @@ public class JdbcMovieDao implements MovieDao {
     }
 
     public List<Movie> getThreeRandomMovies() {
-
         logger.debug("Start getting three random movies from DB");
         long startTime = System.currentTimeMillis();
 
@@ -49,5 +50,14 @@ public class JdbcMovieDao implements MovieDao {
         return movies;
     }
 
-}
+    public List<Movie> getMoviesByGenreId(int genreId) {
+        logger.debug("Start getting movies by genre id from DB");
+        long startTime = System.currentTimeMillis();
 
+        List<Movie> movies = jdbcTemplate.query(getMoviesByGenreSQL, MOVIE_ROW_MAPPER, genreId);
+
+        logger.debug("End getting movies by genre id from DB. It was taken in {} ms", System.currentTimeMillis() - startTime);
+        return movies;
+    }
+
+}

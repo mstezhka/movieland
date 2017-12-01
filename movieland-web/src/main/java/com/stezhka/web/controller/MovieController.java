@@ -54,6 +54,19 @@ public class MovieController {
 
     }
 
+    @RequestMapping(value = "/movie/genre/{genreid}", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
+    public String getMoviesByGenreId(@PathVariable int genreid){
+        logger.debug("Start getting movies by genre id from service");
+        long startTime = System.currentTimeMillis();
+
+        List<Movie> movies = movieService.getMoviesByGenreId(genreid);
+        List<MovieDto> movieDtos = movies.stream().map(this::movieToDto)
+                .collect(Collectors.toList());
+
+        logger.debug("End getting movies by genre id from service. It was taken in {} ms", System.currentTimeMillis() - startTime);
+        return JsonJacksonConverter.movieToJson(movieDtos);
+    }
+
     private MovieDto movieToDto(Movie movie){
         return modelMapper.map(movie, MovieDto.class);
     }
