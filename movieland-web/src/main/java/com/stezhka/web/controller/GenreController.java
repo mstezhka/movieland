@@ -17,12 +17,14 @@ public class GenreController {
 
     private final GenreService genreService;
     private final ModelMapper modelMapper;
+    private final JsonJacksonConverter jsonJacksonConverter;
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    public GenreController(GenreService genreService, ModelMapper modelMapper) {
+    public GenreController(GenreService genreService, ModelMapper modelMapper, JsonJacksonConverter jsonJacksonConverter) {
         this.genreService = genreService;
         this.modelMapper = modelMapper;
+        this.jsonJacksonConverter = jsonJacksonConverter;
     }
 
     @RequestMapping(value = "/genre", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
@@ -35,7 +37,7 @@ public class GenreController {
                 .collect(Collectors.toList());
 
         logger.debug("End getting all genres from service. It was taken in {} ms", System.currentTimeMillis() - startTime);
-        return JsonJacksonConverter.genreToJson(genreDtos);
+        return jsonJacksonConverter.genreToJson(genreDtos);
     }
 
     private GenreDto genreToDto(Genre genre){
